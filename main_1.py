@@ -43,15 +43,15 @@ st.divider()
 
 st.subheader("Графики")
 
-# df3 = pd.DataFrame(
-#     np.random.rand(10, 4),
-#     columns=['A', 'B', 'C', 'D']
-# )
+df3 = pd.DataFrame(
+    np.random.rand(10, 4),
+    columns=['A', 'B', 'C', 'D']
+)
 
-# st.table(df3)
-# st.area_chart(df3)
-# st.line_chart(df3)
-# st.scatter_chart(df3[['A', 'B']])
+st.table(df3)
+st.area_chart(df3)
+st.line_chart(df3)
+st.scatter_chart(df3[['A', 'B']])
 
 st.divider()
 st.subheader("Изображение")
@@ -112,10 +112,15 @@ pt00['Марж.прибыль'] = pt00['Продажи'] + pt00['Себесто�
 
 # pt00 = pt00[pt00["Статья"]=="Продажи"]
 
+st.write("Таблица продаж, себестоимости и марж.прибыли (тыс.руб.)")
 st.table(pt00)
+
+st.write("График продаж, себестоимости и марж.прибыли (тыс.руб.)")
+st.markdown("***График продаж, себестоимости и марж.прибыли (тыс.руб.)***")
+
 st.bar_chart(pt00, stack=False, width=200, height=500)
-st.area_chart(pt00)
-st.line_chart(pt00)
+# st.area_chart(pt00)
+# st.line_chart(pt00)
 
 st.divider()
 st.subheader("Слайдер")
